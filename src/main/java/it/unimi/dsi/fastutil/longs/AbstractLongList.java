@@ -231,13 +231,13 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 	 * @param offset the offset of the first element to add.
 	 * @param length the number of elements to add.
 	 */
- public void addElements( int index, final long a[], int offset, int length ) {
+ public void addElements(int index, final long[] a, int offset, int length ) {
   ensureIndex( index );
   if ( offset < 0 ) throw new ArrayIndexOutOfBoundsException( "Offset (" + offset + ") is negative" );
   if ( offset + length > a.length ) throw new ArrayIndexOutOfBoundsException( "End index (" + ( offset + length ) + ") is greater than array length (" + a.length + ")" );
   while( length-- != 0 ) add( index++, a[ offset++ ] );
  }
- public void addElements( final int index, final long a[] ) {
+ public void addElements( final int index, final long[] a) {
   addElements( index, a, 0, a.length );
  }
  /** Copies element of this type-specific list into the given array one-by-one.
@@ -250,7 +250,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
 	 * @param offset the offset into the destination array where to store the first element copied.
 	 * @param length the number of elements to be copied.
 	 */
- public void getElements( final int from, final long a[], int offset, int length ) {
+ public void getElements(final int from, final long[] a, int offset, int length ) {
   LongListIterator i = listIterator( from );
   if ( offset < 0 ) throw new ArrayIndexOutOfBoundsException( "Offset (" + offset + ") is negative" );
   if ( offset + length > a.length ) throw new ArrayIndexOutOfBoundsException( "End index (" + ( offset + length ) + ") is greater than array length (" + a.length + ")" );
@@ -302,7 +302,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
   ListIterator<? extends Long> i1 = listIterator(), i2 = l.listIterator();
   int r;
   while( i1.hasNext() && i2.hasNext() ) {
-   if ( ( r = ((Comparable<? super Long>)i1.next()).compareTo( i2.next() ) ) != 0 ) return r;
+   if ( ( r = i1.next().compareTo( i2.next() ) ) != 0 ) return r;
   }
   return i2.hasNext() ? -1 : ( i1.hasNext() ? 1 : 0 );
  }
@@ -420,7 +420,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
    if (first) first = false;
    else s.append(", ");
    k = i.nextLong();
-    s.append( String.valueOf( k ) );
+    s.append(k);
   }
   s.append("]");
   return s.toString();
@@ -500,7 +500,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
    this.to -= ( to - from );
    if ( ASSERTS ) assertRange();
   }
-  public void addElements( int index, final long a[], int offset, int length ) {
+  public void addElements(int index, final long[] a, int offset, int length ) {
    ensureIndex( index );
    l.addElements( this.from + index, a, offset, length );
    this.to += length;

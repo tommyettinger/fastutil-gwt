@@ -126,7 +126,7 @@ public interface IntCollection extends Collection<Integer>, IntIterable {
 	 * @return a primitive type array containing the items of this collection.
 	 * @see Collection#toArray(Object[])
 	 */
- int[] toIntArray( int a[] );
+ int[] toIntArray(int[] a);
  /** Returns a primitive type array containing the items of this collection. 
 	 *
 	 * <p>Note that, contrarily to {@link Collection#toArray(Object[])}, this
@@ -137,7 +137,7 @@ public interface IntCollection extends Collection<Integer>, IntIterable {
 	 * @return a primitive type array containing the items of this collection.
 	 * @see Collection#toArray(Object[])
 	 */
- int[] toArray( int a[] );
+ int[] toArray(int[] a);
  /**
 	 * @see Collection#add(Object)
 	 */

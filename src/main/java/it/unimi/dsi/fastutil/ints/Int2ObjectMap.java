@@ -92,12 +92,12 @@ public interface Int2ObjectMap <V> extends Int2ObjectFunction <V>, Map<Integer,V
 	 * will return an iterator that is guaranteed not to create a large number of objects, <em>possibly
 	 * by returning always the same entry</em> (of course, mutated).
 	 */
- public interface FastEntrySet <V> extends ObjectSet<Int2ObjectMap.Entry <V> > {
+ interface FastEntrySet <V> extends ObjectSet<Int2ObjectMap.Entry <V> > {
   /** Returns a fast iterator over this entry set; the iterator might return always the same entry object, suitably mutated.
 		 *
 		 * @return a fast iterator over this entry set; the iterator might return always the same {@link java.util.Map.Entry} object, suitably mutated.
 		 */
-  public ObjectIterator<Int2ObjectMap.Entry <V> > fastIterator();
+  ObjectIterator<Int2ObjectMap.Entry <V> > fastIterator();
  }
  /** Returns a set view of the mappings contained in this map.
 	 *  <P>Note that this specification strengthens the one given in {@link Map#entrySet()}.
@@ -141,7 +141,6 @@ public interface Int2ObjectMap <V> extends Int2ObjectFunction <V>, Map<Integer,V
   /** {@inheritDoc}
 		 * @deprecated Please use the corresponding type-specific method instead. */
   @Deprecated
-  @Override
   Integer getKey();
   /**
 		 * @see java.util.Map.Entry#getKey()

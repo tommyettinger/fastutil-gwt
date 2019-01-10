@@ -86,5 +86,5 @@ public interface IntComparator extends Comparator<Integer> {
 	 * argument is greater than, equal to, or smaller than, respectively, the
 	 * second one.
 	 */
- public int compare( int k1, int k2 );
+ int compare(int k1, int k2);
 }

@@ -192,8 +192,9 @@ public abstract class AbstractLong2ObjectMap <V> extends AbstractLong2ObjectFunc
        /** {@inheritDoc}
 							 * @deprecated Please use the corresponding type-specific method instead. */
        @Deprecated
-       public long nextLong() { return ((Long2ObjectMap.Entry <V>)i.next()).getLongKey(); };
-       public boolean hasNext() { return i.hasNext(); }
+       public long nextLong() { return ((Long2ObjectMap.Entry <V>)i.next()).getLongKey(); }
+
+         public boolean hasNext() { return i.hasNext(); }
       };
     }
    };
@@ -220,8 +221,9 @@ public abstract class AbstractLong2ObjectMap <V> extends AbstractLong2ObjectFunc
        /** {@inheritDoc}
 							 * @deprecated Please use the corresponding type-specific method instead. */
        @Deprecated
-       public V next() { return ((Long2ObjectMap.Entry <V>)i.next()).getValue(); };
-       public boolean hasNext() { return i.hasNext(); }
+       public V next() { return i.next().getValue(); }
+
+         public boolean hasNext() { return i.hasNext(); }
       };
     }
    };
@@ -260,10 +262,10 @@ public abstract class AbstractLong2ObjectMap <V> extends AbstractLong2ObjectFunc
    if (first) first = false;
    else s.append(", ");
    e = (Long2ObjectMap.Entry <V>)i.next();
-    s.append(String.valueOf(e.getLongKey()));
+    s.append(e.getLongKey());
    s.append("=>");
    if (this == e.getValue()) s.append("(this map)"); else
-    s.append(String.valueOf(e.getValue()));
+    s.append(e.getValue());
   }
   s.append("}");
   return s.toString();

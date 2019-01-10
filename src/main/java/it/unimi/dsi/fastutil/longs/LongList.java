@@ -146,7 +146,7 @@ public interface LongList extends List<Long>, Comparable<List<? extends Long>>, 
 	 * @param offset the offset into the destination array where to store the first element copied.
 	 * @param length the number of elements to be copied.
 	 */
- void getElements( int from, long a[], int offset, int length );
+ void getElements(int from, long[] a, int offset, int length );
  /** Removes (hopefully quickly) elements of this type-specific list.
 	 *
 	 * @param from the start index (inclusive).
@@ -158,7 +158,7 @@ public interface LongList extends List<Long>, Comparable<List<? extends Long>>, 
 	 * @param index the index at which to add elements.
 	 * @param a the array containing the elements.
 	 */
- void addElements( int index, long a[] );
+ void addElements(int index, long[] a);
  /** Add (hopefully quickly) elements to this type-specific list.
 	 *
 	 * @param index the index at which to add elements.
@@ -166,7 +166,7 @@ public interface LongList extends List<Long>, Comparable<List<? extends Long>>, 
 	 * @param offset the offset of the first element to add.
 	 * @param length the number of elements to add.
 	 */
- void addElements( int index, long a[], int offset, int length );
+ void addElements(int index, long[] a, int offset, int length );
  /**
 	 * @see List#add(Object)
 	 */

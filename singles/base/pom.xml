@@ -17,6 +17,15 @@
 
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven.source.version}</version>
                 <executions>
@@ -31,7 +40,6 @@
                     <includePom>true</includePom>
                 </configuration>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -62,8 +70,12 @@
                                         <include>it/unimi/dsi/fastutil/objects/AbstractObjectSet$*.class</include>
                                         <include>it/unimi/dsi/fastutil/objects/ObjectCollection.class</include>
                                         <include>it/unimi/dsi/fastutil/objects/ObjectCollection$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/objects/ObjectSet.class</include>
+                                        <include>it/unimi/dsi/fastutil/objects/ObjectArrays.class</include>
                                         <include>it/unimi/dsi/fastutil/objects/ObjectIterator.class</include>
                                         <include>it/unimi/dsi/fastutil/objects/ObjectIterator$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/objects/ObjectIterators.class</include>
+                                        <include>it/unimi/dsi/fastutil/objects/ObjectIterators$*.class</include>
                                     </includes>
                                 </filter>
                             </filters>

@@ -68,6 +68,7 @@
  */
 package it.unimi.dsi.fastutil.objects;
 import java.util.AbstractCollection;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 /** An abstract class providing basic methods for collections implementing a type-specific interface.
@@ -82,10 +83,9 @@ public abstract class AbstractObjectCollection <K> extends AbstractCollection<K>
   it.unimi.dsi.fastutil.objects.ObjectIterators.unwrap( iterator(), a );
   return a;
  }
- @SuppressWarnings("unchecked")
  public <T> T[] toArray( T[] a ) {
   final int size = size();
-  if ( a.length < size ) a = (T[])java.lang.reflect.Array.newInstance( a.getClass().getComponentType(), size );
+  if ( a.length < size ) a = Arrays.copyOf(a, size);
   it.unimi.dsi.fastutil.objects.ObjectIterators.unwrap( iterator(), a );
   if ( size < a.length ) a[ size ] = null;
   return a;
@@ -167,7 +167,7 @@ public abstract class AbstractObjectCollection <K> extends AbstractCollection<K>
    else s.append(", ");
    k = i.next();
    if (this == k) s.append("(this collection)"); else
-    s.append(String.valueOf(k));
+    s.append(k);
   }
   s.append("}");
   return s.toString();

@@ -93,5 +93,5 @@ public interface LongSet extends LongCollection , Set<Long> {
 	 *
 	 * @see java.util.Collection#remove(Object)
 	 */
- public boolean remove( long k );
+ boolean remove(long k);
 }

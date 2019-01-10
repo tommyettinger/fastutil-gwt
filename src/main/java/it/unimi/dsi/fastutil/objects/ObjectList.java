@@ -145,7 +145,7 @@ public interface ObjectList <K> extends List<K>, Comparable<List<? extends K>>, 
 	 * @param offset the offset into the destination array where to store the first element copied.
 	 * @param length the number of elements to be copied.
 	 */
- void getElements( int from, Object a[], int offset, int length );
+ void getElements(int from, Object[] a, int offset, int length );
  /** Removes (hopefully quickly) elements of this type-specific list.
 	 *
 	 * @param from the start index (inclusive).
@@ -157,7 +157,7 @@ public interface ObjectList <K> extends List<K>, Comparable<List<? extends K>>, 
 	 * @param index the index at which to add elements.
 	 * @param a the array containing the elements.
 	 */
- void addElements( int index, K a[] );
+ void addElements(int index, K[] a);
  /** Add (hopefully quickly) elements to this type-specific list.
 	 *
 	 * @param index the index at which to add elements.
@@ -165,5 +165,5 @@ public interface ObjectList <K> extends List<K>, Comparable<List<? extends K>>, 
 	 * @param offset the offset of the first element to add.
 	 * @param length the number of elements to add.
 	 */
- void addElements( int index, K a[], int offset, int length );
+ void addElements(int index, K[] a, int offset, int length );
 }

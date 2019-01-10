@@ -126,7 +126,7 @@ public interface LongCollection extends Collection<Long>, LongIterable {
 	 * @return a primitive type array containing the items of this collection.
 	 * @see Collection#toArray(Object[])
 	 */
- long[] toLongArray( long a[] );
+ long[] toLongArray(long[] a);
  /** Returns a primitive type array containing the items of this collection. 
 	 *
 	 * <p>Note that, contrarily to {@link Collection#toArray(Object[])}, this
@@ -137,7 +137,7 @@ public interface LongCollection extends Collection<Long>, LongIterable {
 	 * @return a primitive type array containing the items of this collection.
 	 * @see Collection#toArray(Object[])
 	 */
- long[] toArray( long a[] );
+ long[] toArray(long[] a);
  /**
 	 * @see Collection#add(Object)
 	 */

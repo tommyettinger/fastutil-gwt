@@ -192,8 +192,9 @@ public abstract class AbstractInt2ObjectMap <V> extends AbstractInt2ObjectFuncti
        /** {@inheritDoc}
 							 * @deprecated Please use the corresponding type-specific method instead. */
        @Deprecated
-       public int nextInt() { return ((Int2ObjectMap.Entry <V>)i.next()).getIntKey(); };
-       public boolean hasNext() { return i.hasNext(); }
+       public int nextInt() { return ((Int2ObjectMap.Entry <V>)i.next()).getIntKey(); }
+
+         public boolean hasNext() { return i.hasNext(); }
       };
     }
    };
@@ -220,8 +221,9 @@ public abstract class AbstractInt2ObjectMap <V> extends AbstractInt2ObjectFuncti
        /** {@inheritDoc}
 							 * @deprecated Please use the corresponding type-specific method instead. */
        @Deprecated
-       public V next() { return ((Int2ObjectMap.Entry <V>)i.next()).getValue(); };
-       public boolean hasNext() { return i.hasNext(); }
+       public V next() { return i.next().getValue(); }
+
+         public boolean hasNext() { return i.hasNext(); }
       };
     }
    };
@@ -260,10 +262,10 @@ public abstract class AbstractInt2ObjectMap <V> extends AbstractInt2ObjectFuncti
    if (first) first = false;
    else s.append(", ");
    e = (Int2ObjectMap.Entry <V>)i.next();
-    s.append(String.valueOf(e.getIntKey()));
+    s.append(e.getIntKey());
    s.append("=>");
    if (this == e.getValue()) s.append("(this map)"); else
-    s.append(String.valueOf(e.getValue()));
+    s.append(e.getValue());
   }
   s.append("}");
   return s.toString();

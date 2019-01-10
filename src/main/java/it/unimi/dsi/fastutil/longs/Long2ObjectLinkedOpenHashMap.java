@@ -692,8 +692,8 @@ public class Long2ObjectLinkedOpenHashMap <V> extends AbstractLong2ObjectSortedM
   }
  }
  public boolean containsValue( final Object v ) {
-  final V value[] = this.value;
-  final long key[] = this.key;
+  final V[] value = this.value;
+  final long[] key = this.key;
   if ( containsNullKey && ( (value[ n ]) == null ? (v) == null : (value[ n ]).equals(v) ) ) return true;
   for( int i = n; i-- != 0; ) if ( ! ( (key[ i ]) == (0) ) && ( (value[ i ]) == null ? (v) == null : (value[ i ]).equals(v) ) ) return true;
   return false;
@@ -1296,14 +1296,14 @@ public class Long2ObjectLinkedOpenHashMap <V> extends AbstractLong2ObjectSortedM
 	 */
  @SuppressWarnings("unchecked")
  protected void rehash( final int newN ) {
-  final long key[] = this.key;
-  final V value[] = this.value;
+  final long[] key = this.key;
+  final V[] value = this.value;
   final int mask = newN - 1; // Note that this is used by the hashing macro
-  final long newKey[] = new long[ newN + 1 ];
-  final V newValue[] = (V[]) new Object[ newN + 1 ];
+  final long[] newKey = new long[newN + 1];
+  final V[] newValue = (V[]) new Object[newN + 1];
   int i = first, prev = -1, newPrev = -1, t, pos;
-  final long link[] = this.link;
-  final long newLink[] = new long[ newN + 1 ];
+  final long[] link = this.link;
+  final long[] newLink = new long[newN + 1];
   first = -1;
   for( int j = size; j-- != 0; ) {
    if ( ( (key[ i ]) == (0) ) ) pos = newN;
@@ -1387,8 +1387,8 @@ public class Long2ObjectLinkedOpenHashMap <V> extends AbstractLong2ObjectSortedM
   return h;
  }
  private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
-  final long key[] = this.key;
-  final V value[] = this.value;
+  final long[] key = this.key;
+  final V[] value = this.value;
   final MapIterator i = new MapIterator();
   s.defaultWriteObject();
   for( int j = size, e; j-- != 0; ) {
@@ -1403,9 +1403,9 @@ public class Long2ObjectLinkedOpenHashMap <V> extends AbstractLong2ObjectSortedM
   n = arraySize( size, f );
   maxFill = maxFill( n, f );
   mask = n - 1;
-  final long key[] = this.key = new long[ n + 1 ];
-  final V value[] = this.value = (V[]) new Object[ n + 1 ];
-  final long link[] = this.link = new long[ n + 1 ];
+  final long[] key = this.key = new long[n + 1];
+  final V[] value = this.value = (V[]) new Object[n + 1];
+  final long[] link = this.link = new long[n + 1];
   int prev = -1;
   first = last = -1;
   long k;

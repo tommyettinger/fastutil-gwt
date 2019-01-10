@@ -147,9 +147,11 @@ public abstract class AbstractInt2ObjectSortedMap <V> extends AbstractInt2Object
   public KeySetIterator( ObjectBidirectionalIterator<Map.Entry <Integer, V>> i ) {
    this.i = i;
   }
-  public int nextInt() { return ((i.next().getKey()).intValue()); };
-  public int previousInt() { return ((i.previous().getKey()).intValue()); };
-  public boolean hasNext() { return i.hasNext(); }
+  public int nextInt() { return ((i.next().getKey()).intValue()); }
+
+     public int previousInt() { return ((i.previous().getKey()).intValue()); }
+
+     public boolean hasNext() { return i.hasNext(); }
   public boolean hasPrevious() { return i.hasPrevious(); }
  }
  /** Returns a type-specific collection view of the values contained in this map.
@@ -183,8 +185,9 @@ public abstract class AbstractInt2ObjectSortedMap <V> extends AbstractInt2Object
   public ValuesIterator( ObjectBidirectionalIterator<Map.Entry <Integer, V>> i ) {
    this.i = i;
   }
-  public V next() { return (i.next().getValue()); };
-  public boolean hasNext() { return i.hasNext(); }
+  public V next() { return (i.next().getValue()); }
+
+     public boolean hasNext() { return i.hasNext(); }
  }
  @SuppressWarnings({ "unchecked", "rawtypes" })
  public ObjectSortedSet<Map.Entry<Integer, V>> entrySet() {

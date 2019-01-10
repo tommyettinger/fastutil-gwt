@@ -78,19 +78,19 @@ public interface IntHash {
 	 *
 	 * @see it.unimi.dsi.fastutil.Hash.Strategy
 	 */
- public interface Strategy {
+ interface Strategy {
   /** Returns the hash code of the specified element with respect to this hash strategy.
 		 *
 		 * @param e an element.
 		 * @return the hash code of the given element with respect to this hash strategy.
 		 */
-  public int hashCode( int e );
+  int hashCode(int e);
   /** Returns true if the given elements are equal with respect to this hash strategy.
 		 *
 		 * @param a an element.
 		 * @param b another element.
 		 * @return true if the two specified elements are equal with respect to this hash strategy.
 		 */
-  public boolean equals( int a, int b );
+  boolean equals(int a, int b);
  }
 }

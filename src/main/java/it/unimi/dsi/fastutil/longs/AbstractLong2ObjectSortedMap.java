@@ -147,9 +147,11 @@ public abstract class AbstractLong2ObjectSortedMap <V> extends AbstractLong2Obje
   public KeySetIterator( ObjectBidirectionalIterator<Map.Entry <Long, V>> i ) {
    this.i = i;
   }
-  public long nextLong() { return ((i.next().getKey()).longValue()); };
-  public long previousLong() { return ((i.previous().getKey()).longValue()); };
-  public boolean hasNext() { return i.hasNext(); }
+  public long nextLong() { return ((i.next().getKey()).longValue()); }
+
+     public long previousLong() { return ((i.previous().getKey()).longValue()); }
+
+     public boolean hasNext() { return i.hasNext(); }
   public boolean hasPrevious() { return i.hasPrevious(); }
  }
  /** Returns a type-specific collection view of the values contained in this map.
@@ -183,8 +185,9 @@ public abstract class AbstractLong2ObjectSortedMap <V> extends AbstractLong2Obje
   public ValuesIterator( ObjectBidirectionalIterator<Map.Entry <Long, V>> i ) {
    this.i = i;
   }
-  public V next() { return (i.next().getValue()); };
-  public boolean hasNext() { return i.hasNext(); }
+  public V next() { return (i.next().getValue()); }
+
+     public boolean hasNext() { return i.hasNext(); }
  }
  @SuppressWarnings({ "unchecked", "rawtypes" })
  public ObjectSortedSet<Map.Entry<Long, V>> entrySet() {

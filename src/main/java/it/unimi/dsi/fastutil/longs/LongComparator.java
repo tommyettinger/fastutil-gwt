@@ -86,5 +86,5 @@ public interface LongComparator extends Comparator<Long> {
 	 * argument is greater than, equal to, or smaller than, respectively, the
 	 * second one.
 	 */
- public int compare( long k1, long k2 );
+ int compare(long k1, long k2);
 }

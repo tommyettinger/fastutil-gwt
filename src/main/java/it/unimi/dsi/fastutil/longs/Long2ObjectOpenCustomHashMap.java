@@ -414,8 +414,8 @@ public class Long2ObjectOpenCustomHashMap <V> extends AbstractLong2ObjectMap <V>
   }
  }
  public boolean containsValue( final Object v ) {
-  final V value[] = this.value;
-  final long key[] = this.key;
+  final V[] value = this.value;
+  final long[] key = this.key;
   if ( containsNullKey && ( (value[ n ]) == null ? (v) == null : (value[ n ]).equals(v) ) ) return true;
   for( int i = n; i-- != 0; ) if ( ! ( (key[ i ]) == (0) ) && ( (value[ i ]) == null ? (v) == null : (value[ i ]).equals(v) ) ) return true;
   return false;
@@ -522,7 +522,7 @@ public class Long2ObjectOpenCustomHashMap <V> extends AbstractLong2ObjectMap <V>
     mustReturnNullKey = false;
     return last = n;
    }
-   final long key[] = Long2ObjectOpenCustomHashMap.this.key;
+   final long[] key = Long2ObjectOpenCustomHashMap.this.key;
    for(;;) {
     if ( --pos < 0 ) {
      // We are just enumerating elements from the wrapped list.
@@ -813,11 +813,11 @@ public class Long2ObjectOpenCustomHashMap <V> extends AbstractLong2ObjectMap <V>
 	 */
  @SuppressWarnings("unchecked")
  protected void rehash( final int newN ) {
-  final long key[] = this.key;
-  final V value[] = this.value;
+  final long[] key = this.key;
+  final V[] value = this.value;
   final int mask = newN - 1; // Note that this is used by the hashing macro
-  final long newKey[] = new long[ newN + 1 ];
-  final V newValue[] = (V[]) new Object[ newN + 1 ];
+  final long[] newKey = new long[newN + 1];
+  final V[] newValue = (V[]) new Object[newN + 1];
   int i = n, pos;
   for( int j = realSize(); j-- != 0; ) {
    while( ( (key[ --i ]) == (0) ) );
@@ -882,8 +882,8 @@ public class Long2ObjectOpenCustomHashMap <V> extends AbstractLong2ObjectMap <V>
   return h;
  }
  private void writeObject(java.io.ObjectOutputStream s) throws java.io.IOException {
-  final long key[] = this.key;
-  final V value[] = this.value;
+  final long[] key = this.key;
+  final V[] value = this.value;
   final MapIterator i = new MapIterator();
   s.defaultWriteObject();
   for( int j = size, e; j-- != 0; ) {
@@ -898,8 +898,8 @@ public class Long2ObjectOpenCustomHashMap <V> extends AbstractLong2ObjectMap <V>
   n = arraySize( size, f );
   maxFill = maxFill( n, f );
   mask = n - 1;
-  final long key[] = this.key = new long[ n + 1 ];
-  final V value[] = this.value = (V[]) new Object[ n + 1 ];
+  final long[] key = this.key = new long[n + 1];
+  final V[] value = this.value = (V[]) new Object[n + 1];
   long k;
   V v;
   for( int i = size, pos; i-- != 0; ) {

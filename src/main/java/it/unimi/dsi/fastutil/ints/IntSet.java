@@ -93,5 +93,5 @@ public interface IntSet extends IntCollection , Set<Integer> {
 	 *
 	 * @see java.util.Collection#remove(Object)
 	 */
- public boolean remove( int k );
+ boolean remove(int k);
 }

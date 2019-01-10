@@ -91,9 +91,11 @@ public class LongIterators {
   public long previousLong() { throw new NoSuchElementException(); }
   public int nextIndex() { return 0; }
   public int previousIndex() { return -1; }
-  public int skip( int n ) { return 0; };
-  public int back( int n ) { return 0; };
-  public Object clone() { return EMPTY_ITERATOR; }
+  public int skip( int n ) { return 0; }
+
+     public int back( int n ) { return 0; }
+
+     public Object clone() { return EMPTY_ITERATOR; }
         private Object readResolve() { return EMPTY_ITERATOR; }
  }
  /** An empty iterator (immutable). It is serializable and cloneable.
@@ -221,7 +223,7 @@ public class LongIterators {
 	 * @param max the maximum number of elements to unwrap.
 	 * @return the number of elements unwrapped.
 	 */
- public static int unwrap( final LongIterator i, final long array[], int offset, final int max ) {
+ public static int unwrap(final LongIterator i, final long[] array, int offset, final int max ) {
   if ( max < 0 ) throw new IllegalArgumentException( "The maximum number of elements (" + max + ") is negative" );
   if ( offset < 0 || offset + max > array.length ) throw new IllegalArgumentException();
   int j = max;
@@ -238,7 +240,7 @@ public class LongIterators {
 	 * @param array an array to contain the output of the iterator.
 	 * @return the number of elements unwrapped.
 	 */
- public static int unwrap( final LongIterator i, final long array[] ) {
+ public static int unwrap( final LongIterator i, final long[] array) {
   return unwrap( i, array, 0, array.length );
  }
  /** Unwraps an iterator, returning an array, with a limit on the number of elements.
@@ -254,7 +256,7 @@ public class LongIterators {
 
  public static long[] unwrap( final LongIterator i, int max ) {
   if ( max < 0 ) throw new IllegalArgumentException( "The maximum number of elements (" + max + ") is negative" );
-  long array[] = new long[ 16 ];
+     long[] array = new long[16];
   int j = 0;
   while( max-- != 0 && i.hasNext() ) {
    if ( j == array.length ) array = LongArrays.grow( array, j + 1 );
@@ -493,9 +495,9 @@ public class LongIterators {
   return new IntervalIterator( from, to );
  }
  private static class IteratorConcatenator extends AbstractLongIterator {
-  final LongIterator a[];
+     final LongIterator[] a;
   int offset, length, lastOffset = -1;
-  public IteratorConcatenator( final LongIterator a[], int offset, int length ) {
+  public IteratorConcatenator(final LongIterator[] a, int offset, int length ) {
    this.a = a;
    this.offset = offset;
    this.length = length;
@@ -542,7 +544,7 @@ public class LongIterators {
 	 * @param a an array of iterators.
 	 * @return an iterator obtained by concatenation.
 	 */
- public static LongIterator concat( final LongIterator a[] ) {
+ public static LongIterator concat(final LongIterator[] a) {
   return concat( a, 0, a.length );
  }
  /** Concatenates a sequence of iterators contained in an array.
@@ -557,7 +559,7 @@ public class LongIterators {
 	 * @param length the number of iterators to concatenate.
 	 * @return an iterator obtained by concatenation of <code>length</code> elements of <code>a</code> starting at <code>offset</code>.
 	 */
- public static LongIterator concat( final LongIterator a[], final int offset, final int length ) {
+ public static LongIterator concat(final LongIterator[] a, final int offset, final int length ) {
   return new IteratorConcatenator ( a, offset, length );
  }
    /** An unmodifiable wrapper class for iterators. */

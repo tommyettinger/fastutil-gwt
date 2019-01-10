@@ -21,7 +21,7 @@ package it.unimi.dsi.fastutil;
 
 public class HashCommon {
 
-	protected HashCommon() {};
+	protected HashCommon() {}
 
 	/** This reference is used to fill keys and values of removed entries (if
 		they are objects). <code>null</code> cannot be used as it would confuse the

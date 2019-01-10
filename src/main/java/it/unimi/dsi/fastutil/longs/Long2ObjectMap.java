@@ -92,12 +92,12 @@ public interface Long2ObjectMap <V> extends Long2ObjectFunction <V>, Map<Long,V>
 	 * will return an iterator that is guaranteed not to create a large number of objects, <em>possibly
 	 * by returning always the same entry</em> (of course, mutated).
 	 */
- public interface FastEntrySet <V> extends ObjectSet<Long2ObjectMap.Entry <V> > {
+ interface FastEntrySet <V> extends ObjectSet<Long2ObjectMap.Entry <V> > {
   /** Returns a fast iterator over this entry set; the iterator might return always the same entry object, suitably mutated.
 		 *
 		 * @return a fast iterator over this entry set; the iterator might return always the same {@link java.util.Map.Entry} object, suitably mutated.
 		 */
-  public ObjectIterator<Long2ObjectMap.Entry <V> > fastIterator();
+  ObjectIterator<Long2ObjectMap.Entry <V> > fastIterator();
  }
  /** Returns a set view of the mappings contained in this map.
 	 *  <P>Note that this specification strengthens the one given in {@link Map#entrySet()}.

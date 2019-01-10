@@ -17,6 +17,15 @@
 
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+                <configuration>
+                    <source>${jdk.version}</source>
+                    <target>${jdk.version}</target>
+                </configuration>
+            </plugin>
+            <plugin>
                 <artifactId>maven-source-plugin</artifactId>
                 <version>${maven.source.version}</version>
                 <executions>
@@ -53,6 +62,7 @@
                                         <include>it/unimi/dsi/fastutil/ints/IntHash$*.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectOpenCustomHashMap.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectOpenCustomHashMap$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/objects/ObjectArrays$*.class</include>
                                     </includes>
                                 </filter>
                             </filters>

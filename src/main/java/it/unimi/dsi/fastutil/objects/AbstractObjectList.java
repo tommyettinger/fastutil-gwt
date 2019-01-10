@@ -231,13 +231,13 @@ public abstract class AbstractObjectList <K> extends AbstractObjectCollection <K
 	 * @param offset the offset of the first element to add.
 	 * @param length the number of elements to add.
 	 */
- public void addElements( int index, final K a[], int offset, int length ) {
+ public void addElements(int index, final K[] a, int offset, int length ) {
   ensureIndex( index );
   if ( offset < 0 ) throw new ArrayIndexOutOfBoundsException( "Offset (" + offset + ") is negative" );
   if ( offset + length > a.length ) throw new ArrayIndexOutOfBoundsException( "End index (" + ( offset + length ) + ") is greater than array length (" + a.length + ")" );
   while( length-- != 0 ) add( index++, a[ offset++ ] );
  }
- public void addElements( final int index, final K a[] ) {
+ public void addElements( final int index, final K[] a) {
   addElements( index, a, 0, a.length );
  }
  /** Copies element of this type-specific list into the given array one-by-one.
@@ -250,7 +250,7 @@ public abstract class AbstractObjectList <K> extends AbstractObjectCollection <K
 	 * @param offset the offset into the destination array where to store the first element copied.
 	 * @param length the number of elements to be copied.
 	 */
- public void getElements( final int from, final Object a[], int offset, int length ) {
+ public void getElements(final int from, final Object[] a, int offset, int length ) {
   ObjectListIterator <K> i = listIterator( from );
   if ( offset < 0 ) throw new ArrayIndexOutOfBoundsException( "Offset (" + offset + ") is negative" );
   if ( offset + length > a.length ) throw new ArrayIndexOutOfBoundsException( "End index (" + ( offset + length ) + ") is greater than array length (" + a.length + ")" );
@@ -340,7 +340,7 @@ public abstract class AbstractObjectList <K> extends AbstractObjectCollection <K
    else s.append(", ");
    k = i.next();
    if (this == k) s.append("(this list)"); else
-    s.append( String.valueOf( k ) );
+    s.append(k);
   }
   s.append("]");
   return s.toString();
@@ -420,7 +420,7 @@ public abstract class AbstractObjectList <K> extends AbstractObjectCollection <K
    this.to -= ( to - from );
    if ( ASSERTS ) assertRange();
   }
-  public void addElements( int index, final K a[], int offset, int length ) {
+  public void addElements(int index, final K[] a, int offset, int length ) {
    ensureIndex( index );
    l.addElements( this.from + index, a, offset, length );
    this.to += length;

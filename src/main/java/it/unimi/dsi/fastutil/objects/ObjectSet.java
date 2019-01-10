@@ -92,5 +92,5 @@ public interface ObjectSet <K> extends ObjectCollection <K>, Set<K> {
 	 *
 	 * @see java.util.Collection#remove(Object)
 	 */
- public boolean remove( Object k );
+ boolean remove(Object k);
 }

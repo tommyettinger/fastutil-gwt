@@ -90,12 +90,12 @@ public interface Long2ObjectSortedMap <V> extends Long2ObjectMap <V>, SortedMap<
 	 * will return an iterator that is guaranteed not to create a large number of objects, <em>possibly
 	 * by returning always the same entry</em> (of course, mutated).
 	 */
- public interface FastSortedEntrySet <V> extends ObjectSortedSet<Long2ObjectMap.Entry <V> >, FastEntrySet <V> {
+ interface FastSortedEntrySet <V> extends ObjectSortedSet<Long2ObjectMap.Entry <V> >, FastEntrySet <V> {
   /** Returns a fast iterator over this sorted entry set; the iterator might return always the same entry object, suitably mutated.
 		 *
 		 * @return a fast iterator over this sorted entry set; the iterator might return always the same entry object, suitably mutated.
 		 */
-  public ObjectBidirectionalIterator<Long2ObjectMap.Entry <V> > fastIterator( Long2ObjectMap.Entry <V> from );
+  ObjectBidirectionalIterator<Long2ObjectMap.Entry <V> > fastIterator(Long2ObjectMap.Entry<V> from);
  }
  /** Returns a sorted-set view of the mappings contained in this map.
 	 *  Note that this specification strengthens the one given in the

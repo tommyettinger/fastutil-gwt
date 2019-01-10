@@ -69,6 +69,7 @@
  */
 package it.unimi.dsi.fastutil.longs;
 import java.util.AbstractCollection;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 /** An abstract class providing basic methods for collections implementing a type-specific interface.
@@ -78,13 +79,13 @@ import java.util.Iterator;
  */
 public abstract class AbstractLongCollection extends AbstractCollection<Long> implements LongCollection {
  protected AbstractLongCollection() {}
- public long[] toArray( long a[] ) {
+ public long[] toArray(long[] a) {
   return toLongArray( a );
  }
  public long[] toLongArray() {
   return toLongArray( null );
  }
- public long[] toLongArray( long a[] ) {
+ public long[] toLongArray(long[] a) {
   if ( a == null || a.length < size() ) a = new long[ size() ];
   LongIterators.unwrap( iterator(), a );
   return a;
@@ -149,7 +150,7 @@ public abstract class AbstractLongCollection extends AbstractCollection<Long> im
  @SuppressWarnings("unchecked")
  public <T> T[] toArray( T[] a ) {
   final int size = size();
-  if ( a.length < size ) a = (T[])java.lang.reflect.Array.newInstance( a.getClass().getComponentType(), size );
+  if ( a.length < size ) a = Arrays.copyOf(a, size);
   it.unimi.dsi.fastutil.objects.ObjectIterators.unwrap( iterator(), a );
   if ( size < a.length ) a[ size ] = null;
   return a;
@@ -263,7 +264,7 @@ public abstract class AbstractLongCollection extends AbstractCollection<Long> im
    if (first) first = false;
    else s.append(", ");
    k = i.nextLong();
-    s.append(String.valueOf(k));
+    s.append(k);
   }
   s.append("}");
   return s.toString();

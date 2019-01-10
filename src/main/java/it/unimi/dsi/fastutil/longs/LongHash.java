@@ -78,19 +78,19 @@ public interface LongHash {
 	 *
 	 * @see it.unimi.dsi.fastutil.Hash.Strategy
 	 */
- public interface Strategy {
+ interface Strategy {
   /** Returns the hash code of the specified element with respect to this hash strategy.
 		 *
 		 * @param e an element.
 		 * @return the hash code of the given element with respect to this hash strategy.
 		 */
-  public int hashCode( long e );
+  int hashCode(long e);
   /** Returns true if the given elements are equal with respect to this hash strategy.
 		 *
 		 * @param a an element.
 		 * @param b another element.
 		 * @return true if the two specified elements are equal with respect to this hash strategy.
 		 */
-  public boolean equals( long a, long b );
+  boolean equals(long a, long b);
  }
 }

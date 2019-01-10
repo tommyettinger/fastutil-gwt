@@ -69,6 +69,7 @@
  */
 package it.unimi.dsi.fastutil.ints;
 import java.util.AbstractCollection;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 /** An abstract class providing basic methods for collections implementing a type-specific interface.
@@ -78,13 +79,13 @@ import java.util.Iterator;
  */
 public abstract class AbstractIntCollection extends AbstractCollection<Integer> implements IntCollection {
  protected AbstractIntCollection() {}
- public int[] toArray( int a[] ) {
+ public int[] toArray(int[] a) {
   return toIntArray( a );
  }
  public int[] toIntArray() {
   return toIntArray( null );
  }
- public int[] toIntArray( int a[] ) {
+ public int[] toIntArray(int[] a) {
   if ( a == null || a.length < size() ) a = new int[ size() ];
   IntIterators.unwrap( iterator(), a );
   return a;
@@ -149,7 +150,7 @@ public abstract class AbstractIntCollection extends AbstractCollection<Integer> 
  @SuppressWarnings("unchecked")
  public <T> T[] toArray( T[] a ) {
   final int size = size();
-  if ( a.length < size ) a = (T[])java.lang.reflect.Array.newInstance( a.getClass().getComponentType(), size );
+  if ( a.length < size ) a = Arrays.copyOf(a, size);
   it.unimi.dsi.fastutil.objects.ObjectIterators.unwrap( iterator(), a );
   if ( size < a.length ) a[ size ] = null;
   return a;
@@ -263,7 +264,7 @@ public abstract class AbstractIntCollection extends AbstractCollection<Integer> 
    if (first) first = false;
    else s.append(", ");
    k = i.nextInt();
-    s.append(String.valueOf(k));
+    s.append(k);
   }
   s.append("}");
   return s.toString();
