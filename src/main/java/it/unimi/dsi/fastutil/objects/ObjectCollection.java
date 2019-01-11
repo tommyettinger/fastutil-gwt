@@ -76,7 +76,7 @@ import java.util.Collection;
  *
  * @see Collection
  */
-public interface ObjectCollection <K> extends Collection<K>, ObjectIterable <K> {
+public interface ObjectCollection <K> extends Collection<K>, Iterable <K> {
  /** Returns a type-specific iterator on the elements of this collection.
 	 *
 	 * <p>Note that this specification strengthens the one given in 
