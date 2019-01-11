@@ -65,6 +65,7 @@
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLong2ObjectMap$*.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLongSet.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLongSet$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/longs/Long2ObjectFunction.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/Long2ObjectMap.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/Long2ObjectMap$*.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/LongArrayList.class</include>

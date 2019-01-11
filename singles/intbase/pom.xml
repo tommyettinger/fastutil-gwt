@@ -65,6 +65,7 @@
                                         <include>it/unimi/dsi/fastutil/ints/AbstractInt2ObjectMap$*.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/AbstractIntSet.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/AbstractIntSet$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/Int2ObjectFunction.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectMap.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectMap$*.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/IntArrayList.class</include>
