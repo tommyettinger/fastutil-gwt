@@ -80,6 +80,7 @@
                                         <include>it/unimi/dsi/fastutil/longs/LongIterator.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/LongIterator$*.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/LongCollection.class</include>
+                                        <include>it/unimi/dsi/fastutil/longs/LongList.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/LongSet.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/LongSet$*.class</include>
                                     </includes>

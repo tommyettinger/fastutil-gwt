@@ -77,7 +77,7 @@ import java.util.NoSuchElementException;
  *
  * <P>As an additional bonus, this class implements on top of the list operations a type-specific stack.
  */
-public abstract class AbstractIntList extends AbstractIntCollection implements IntList , IntStack {
+public abstract class AbstractIntList extends AbstractIntCollection implements IntList {
  protected AbstractIntList() {}
  /** Ensures that the given index is nonnegative and not greater than the list size.
 	 *

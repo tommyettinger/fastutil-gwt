@@ -487,7 +487,7 @@ public class LongArrayList extends AbstractLongList implements RandomAccess, Clo
   for( i = 0; i < s1 && i < s2; i++ ) {
    e1 = a1[ i ];
    e2 = a2[ i ];
-   if ( ( r = ( Long.compare((e1),(e2)) ) ) != 0 ) return r;
+   if ( ( r = ( (e1 < e2) ? -1 : ((e1 == e2) ? 0 : 1) ) ) != 0 ) return r;
   }
   return i < s2 ? -1 : ( i < s1 ? 1 : 0 );
  }

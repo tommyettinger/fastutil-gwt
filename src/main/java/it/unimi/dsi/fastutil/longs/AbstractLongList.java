@@ -77,7 +77,7 @@ import java.util.NoSuchElementException;
  *
  * <P>As an additional bonus, this class implements on top of the list operations a type-specific stack.
  */
-public abstract class AbstractLongList extends AbstractLongCollection implements LongList , LongStack {
+public abstract class AbstractLongList extends AbstractLongCollection implements LongList {
  protected AbstractLongList() {}
  /** Ensures that the given index is nonnegative and not greater than the list size.
 	 *
@@ -295,7 +295,7 @@ public abstract class AbstractLongList extends AbstractLongCollection implements
    while( i1.hasNext() && i2.hasNext() ) {
     e1 = i1.nextLong();
     e2 = i2.nextLong();
-    if ( ( r = ( Long.compare((e1),(e2)) ) ) != 0 ) return r;
+    if ( ( r = (e1 < e2) ? -1 : ((e1 == e2) ? 0 : 1) ) != 0 ) return r;
    }
    return i2.hasNext() ? -1 : ( i1.hasNext() ? 1 : 0 );
   }
