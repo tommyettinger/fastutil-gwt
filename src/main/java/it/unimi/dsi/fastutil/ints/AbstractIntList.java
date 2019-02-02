@@ -295,7 +295,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
    while( i1.hasNext() && i2.hasNext() ) {
     e1 = i1.nextInt();
     e2 = i2.nextInt();
-    if ( ( r = ( Integer.compare((e1),(e2)) ) ) != 0 ) return r;
+    if ( ( r = (e1 < e2) ? -1 : ((e1 == e2) ? 0 : 1) ) != 0 ) return r;
    }
    return i2.hasNext() ? -1 : ( i1.hasNext() ? 1 : 0 );
   }
@@ -365,13 +365,13 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer set( final int index, final Integer ok ) {
-  return (Integer.valueOf(set( index, ok.intValue() )));
+  return (set(index, ok.intValue()));
  }
  /** Delegates to the corresponding type-specific method.
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer get( final int index ) {
-  return (Integer.valueOf(getInt( index )));
+  return (getInt(index));
  }
  /** Delegates to the corresponding type-specific method. */
  public int indexOf( final Object ok) {
@@ -385,7 +385,7 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer remove( final int index ) {
-  return (Integer.valueOf(removeInt( index )));
+  return (removeInt(index));
  }
  /** Delegates to the corresponding type-specific method. */
  public void push( Integer o ) {
@@ -395,19 +395,19 @@ public abstract class AbstractIntList extends AbstractIntCollection implements I
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer pop() {
-  return Integer.valueOf( popInt() );
+  return popInt();
  }
  /** Delegates to the corresponding type-specific method.
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer top() {
-  return Integer.valueOf( topInt() );
+  return topInt();
  }
  /** Delegates to the corresponding type-specific method.
 	 * @deprecated Please use the corresponding type-specific method instead. */
  @Deprecated
  public Integer peek( int i ) {
-  return Integer.valueOf( peekInt( i ) );
+  return peekInt(i);
  }
  public String toString() {
   final StringBuilder s = new StringBuilder();

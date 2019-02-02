@@ -66,11 +66,14 @@
                                         <include>it/unimi/dsi/fastutil/ints/AbstractIntCollection.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/AbstractIntSet.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/AbstractIntSet$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractIntList.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractIntList$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractIntListIterator.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/IntArrayList.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/IntArrayList$*.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectFunction.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectMap.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/Int2ObjectMap$*.class</include>
-                                        <include>it/unimi/dsi/fastutil/ints/IntArrayList.class</include>
-                                        <include>it/unimi/dsi/fastutil/ints/IntArrayList$*.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/IntIterator.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/IntIterable.class</include>
                                         <include>it/unimi/dsi/fastutil/ints/IntIterator$*.class</include>

@@ -66,6 +66,11 @@
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLongCollection.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLongSet.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/AbstractLongSet$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractLongList.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractLongList$*.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/AbstractLongListIterator.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/LongArrayList.class</include>
+                                        <include>it/unimi/dsi/fastutil/ints/LongArrayList$*.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/Long2ObjectFunction.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/Long2ObjectMap.class</include>
                                         <include>it/unimi/dsi/fastutil/longs/Long2ObjectMap$*.class</include>
